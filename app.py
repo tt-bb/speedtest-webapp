@@ -2,7 +2,8 @@ from flask import Flask, render_template, request
 import speedtest
 import requests
 import json
-from env import API_KEY
+import os
+
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -16,7 +17,7 @@ def home():
 
         # Get IP information
         ip = requests.get('https://api.ipify.org').text
-        key = API_KEY
+        key = os.environ['KEY']
         url = f"https://ipgeolocation.abstractapi.com/v1/?api_key={key}&ip_address={ip}"
         response = requests.get(url)
         result = json.loads(response.content)
