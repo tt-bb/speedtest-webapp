@@ -1,1 +1,1 @@
-web: gunicorn app: speedtest-ttbb
+web: gunicorn app:app
