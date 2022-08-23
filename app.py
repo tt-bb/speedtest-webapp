@@ -17,8 +17,7 @@ def home():
         # Get IP information
         ip = requests.get('https://api.ipify.org').text
         key = API_KEY
-        url = 
-f"https://ipgeolocation.abstractapi.com/v1/?api_key={key}&ip_address={ip}"
+        url = f"https://ipgeolocation.abstractapi.com/v1/?api_key={key}&ip_address={ip}"
         response = requests.get(url)
         result = json.loads(response.content)
 
@@ -46,12 +45,10 @@ f"https://ipgeolocation.abstractapi.com/v1/?api_key={key}&ip_address={ip}"
         print(f"\n\t∇ : {download} Mbps")
         print(f"\t∆ : {upload} Mbps")
 
-        return render_template('index.html', ip=ip, city=city, 
-country=country, download=download, upload=upload,
-                               fai=fai)
+        return render_template('index.html', ip=ip, city=city, country=country,
+                               download=download, upload=upload, fai=fai)
     else:
-        return render_template('index.html', ip="there is no place like 
-127.0.0.1", dooad=0, upload=0,
+        return render_template('index.html', ip="there is no place like 127.0.0.1", dooad=0, upload=0,
                                fai="---", city="---", country="---")
 
 
