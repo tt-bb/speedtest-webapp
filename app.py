@@ -17,6 +17,7 @@ def home():
 
         # Get IP information
         ip = request.remote_addr
+        print(ip)
         key = os.environ['KEY']
         url = f"https://ipgeolocation.abstractapi.com/v1/?api_key={key}&ip_address={ip}"
         response = requests.get(url)
