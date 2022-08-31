@@ -16,7 +16,7 @@ def home():
         print("in progress...")
 
         # Get IP information
-        ip = requests.get('https://api.ipify.org').text
+        ip = request.remote_addr
         key = os.environ['KEY']
         url = f"https://ipgeolocation.abstractapi.com/v1/?api_key={key}&ip_address={ip}"
         response = requests.get(url)
