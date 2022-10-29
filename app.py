@@ -16,7 +16,7 @@ def home():
         print("in progress...")
 
         # Get IP information
-        ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
+        ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)[0]
         print(ip)
         key = os.getenv('KEY')
         url = f"https://ipgeolocation.abstractapi.com/v1/?api_key={key}&ip_address={ip}"
